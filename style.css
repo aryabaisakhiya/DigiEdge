@@ -1,0 +1,62 @@
+/* static/style.css */
+
+/* Custom styles for the body */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+}
+
+/* Custom styles for the navigation bar */
+.navbar {
+    margin-bottom: 20px;
+}
+
+/* Custom styles for cards */
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Custom styles for buttons */
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+/* Custom styles for tables */
+.table {
+    margin-top: 20px;
+}
+
+.table th {
+    background-color: #007bff;
+    color: white;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(0, 123, 255, 0.05);
+}
+
+/* Custom styles for alerts */
+.alert {
+    margin-top: 20px;
+}
+
+/* Custom styles for the QR code image */
+.qr-code-img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+}

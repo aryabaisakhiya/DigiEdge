@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #0072ff, #00c6ff);
+            color: white;
+            text-align: center;
+            scroll-behavior: smooth;
+        }
+        .navbar-container {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 15px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 1200px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            margin-top: 20px;
+            position: fixed;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+        }
+        .navbar {
+            background: linear-gradient(135deg, #004e92, #00c9ff);
+            padding: 15px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 1.8rem;
+            color: #ffffff !important;
+        }
+        .navbar-nav .nav-item {
+            margin: 0 10px;
+        }
+        .navbar-nav .nav-link {
+            color: #ffffff !important;
+            font-weight: 600;
+            padding: 10px 15px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            transition: background 0.3s, transform 0.3s;
+        }
+        .navbar-nav .nav-link:hover {
+            background: rgba(255, 255, 255, 0.4);
+            transform: scale(1.1);
+        }
+        .content {
+            padding: 100px 20px 50px;
+            margin-top: 100px;
+        }
+        .content img {
+            width: 100%;
+            max-width: 450px;
+            height: auto;
+            object-fit: cover;
+        }
+        .container-section {
+            padding: 100px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            margin: 20px auto;
+            width: 90%;
+            max-width: 1200px;
+        }
+    </style>
+</head>
+<body>
+    <div id="home" class="content">
+        <h3>Welcome to DigiEdge</h3>
+        <h5> Your Digital Growth Partner</h5>
+    </div>
+    <div class="navbar-container">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="#home">DigiEdge Dashboard</a>
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('logout') }}">Logout</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div id="services" class="dashboard-container container-section">
+        <h2>Our Services</h2>
+        <p>Explore our dashboard features designed to help you grow your business.</p>
+        <div class="sidebar list-group">
+            <a href="{{ url_for('add_business') }}" class="list-group-item">Add Business</a>
+            <a href="{{ url_for('add_product') }}" class="list-group-item">Add Product</a>
+            <a href="{{ url_for('business_list') }}" class="list-group-item">Business List</a>
+            <a href="{{ url_for('product_list') }}" class="list-group-item">Product List</a>
+            <a href="{{ url_for('qr_generator') }}" class="list-group-item">QR Generator</a>
+            <a href="{{ url_for('generate_company_names_page') }}" class="list-group-item">Generate Company Names</a>
+            <a href="{{ url_for('generate_hashtags') }}" class="list-group-item">Generate Hashtags</a>
+        </div>
+    </div>
+    <div id="about" class="container-section">
+        <h2>About Us</h2>
+        <p>DigiEdge Your Digital Growth Partner 
+            DigiEdge is an all-in-one digital marketing and business growth platform designed to help businesses establish a strong online presence, attract customers, and enhance their brand visibility. It provides AI-powered tools to generate content, optimize marketing strategies, and streamline digital operations.
+             Why Choose DigiEdge?
+             AI-Powered Efficiency Saves time by automating content creation & marketing tasks.
+             User-Friendly Interface Easy to navigate and use for businesses of all sizes.
+             Boosts Online Visibility Helps businesses rank higher and attract more customers.
+             All-in-One Platform No need for multiple tools everything is in one place!
+            
+             DigiEdge empowers businesses to stay ahead in the digital world! </p>
+    </div>
+    <div id="contact" class="container-section">
+        <h2>Contact Us</h2>
+        <p>For inquiries, reach out to us at <strong>contact@digiedge.com</strong> or call us at <strong>+91 12345 67890</strong>.</p>
+    </div>
+</body>
+</html>

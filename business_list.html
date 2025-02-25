@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business List</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Add a background image to the body */
+        body {
+            background-image: url('https://wallpapers.com/images/hd/blue-and-white-background-id45t2qr18tkt27u.jpg'); /* Replace with your image URL */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        /* Style the table to make it stand out on the background */
+        .table {
+            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Style the navbar to make it stand out */
+        .navbar {
+            background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+        }
+
+        /* Add padding and margin to the container for better spacing */
+        .container {
+            padding: 20px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Business List</a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('dashboard') }}">Dashboard</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container mt-4">
+        <h2>Business List</h2>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Website</th>
+                    <th>Action</th> <!-- New column for delete button -->
+                </tr>
+            </thead>
+            <tbody>
+                {% for business in businesses %}
+                <tr>
+                    <td>{{ business.name }}</td>
+                    <td>{{ business.description }}</td>
+                    <td><a href="{{ business.website }}" target="_blank">{{ business.website }}</a></td>
+                    <td>
+                        <!-- Delete button with a form -->
+                        <form action="{{ url_for('delete_business', business_id=business.id) }}" method="POST" style="display: inline;">
+                            <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

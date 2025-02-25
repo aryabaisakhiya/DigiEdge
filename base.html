@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Business App{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <nav>
+        <a href="{{ url_for('dashboard') }}">Dashboard</a>
+        <a href="{{ url_for('business_list') }}">Businesses</a>
+        <a href="{{ url_for('product_list') }}">Products</a>
+        <a href="{{ url_for('qr_generator') }}">QR Code</a>
+        <a href="{{ url_for('generate_company_names_page') }}">Company Names</a>
+        <a href="{{ url_for('generate_hashtags') }}">Hashtags</a>
+        <a href="{{ url_for('logout') }}">Logout</a>
+    </nav>
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>
